@@ -1,6 +1,6 @@
 package src.sorts;
 
-public class bubbleSort 
+public class BubbleSort 
 {
     public static void sort(int[] arr) 
     {

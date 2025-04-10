@@ -1,6 +1,6 @@
 package src.sorts;
 
-public class quickSort
+public class QuickSort
 {
     public static void sort(int[] arr, int low, int high) 
     {

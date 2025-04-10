@@ -1,16 +1,16 @@
 package src.sorts;
 
-public class mergeSort {
+public class MergeSort {
     public static void sort(int[] arr, int left, int right) 
     {
         if (left < right) {
             int mid = (left + right) / 2;
 
             // Sort left half
-            Sort(arr, left, mid);
+            sort(arr, left, mid);
 
             // Sort right half
-            Sort(arr, mid + 1, right);
+            sort(arr, mid + 1, right);
 
             // Merge both halves
             merge(arr, left, mid, right);
