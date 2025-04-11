@@ -1,17 +1,16 @@
 package src.sorts;
 import java.util.*;
 
-public class LibrarySortStructured {
+public class LibrarySort {
 
-    static final int GAP = Integer.MIN_VALUE;  // Sentinel value
+    static final int GAP = Integer.MIN_VALUE;
 
     public static List<Integer> librarySort(List<Integer> input) {
         int n = input.size();
-        int size = 2 * n;  // Extra space for gaps
+        int size = 2 * n;
         Integer[] S = new Integer[size];
         Arrays.fill(S, GAP);
 
-        // Insert first element at middle-ish
         S[n] = input.get(0);
         int numInserted = 1;
 
@@ -20,10 +19,8 @@ public class LibrarySortStructured {
             int begin = n - (1 << (round - 1)) + 1;
             int end = n + (1 << (round - 1)) - 1;
 
-            // Rebalance S[begin..end] into double size with gaps
             rebalance(S, begin, end);
 
-            // Insert next 2^(round - 1) elements
             int insertStart = 1 << (round - 1);
             int insertEnd = Math.min(1 << round, n);
 
@@ -45,7 +42,6 @@ public class LibrarySortStructured {
         return compact(S);
     }
 
-    // Rebalances A[begin..end] into double the space with gaps
     private static void rebalance(Integer[] A, int begin, int end) {
         int r = end;
         int w = end * 2;
