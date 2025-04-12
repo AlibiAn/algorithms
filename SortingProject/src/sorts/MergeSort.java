@@ -1,6 +1,10 @@
 package src.sorts;
 
 public class MergeSort {
+    public static void sort(int[] arr) {
+        sort(arr, 0, arr.length - 1);
+    }
+    
     public static void sort(int[] arr, int left, int right) 
     {
         if (left < right) {
